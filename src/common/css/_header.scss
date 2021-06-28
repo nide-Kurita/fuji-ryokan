@@ -1,0 +1,315 @@
+.header {
+  order: 1;
+  height: 80px;
+  @include mq-sp {
+    height: 60px;
+  }
+  .header-container {
+    width: 100%;
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    box-shadow: 0 0 1px 0 rgba($color-black, 0.3);
+    transition: all 0.4s ease-out;
+    position: relative;
+    @include mq-sp {
+      height: 60px;
+      padding-right: (40/750)*100%;
+      padding-left: (40/750)*100%;
+    }
+    &.is-scroll {
+      height: 60px;
+      box-shadow: 0 0 4px 0 rgba($color-black, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: $color-white;
+      z-index: 100;
+      @include mq-sp {
+        height: 60px;
+      }
+    }
+    &.is-scroll-out {
+      transform: translateY(-100%);
+    }
+    &.is-on {
+      @include mq-sp {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 200;
+      }
+    }
+  }
+  .header-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @include mq-sp {
+      justify-content: space-between;
+      z-index: 200;
+      position: relative;
+    }
+  }
+  .menu-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    @include mq-sp {
+      width: 100%;
+      height: 100%;
+      padding-top: 100px;
+      padding-right: (40/750)*100%;
+      padding-left: (40/750)*100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      transition: all 0.1s ease-out;
+      pointer-events: none;
+      opacity: 0;
+      &::before {
+        content: '';
+        background-color: rgba($color-orange, 0.99);
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 10px;
+        right: 18px;
+        border-radius: 50%;
+        transition: all 0.4s ease-out;
+        transform: scale(1);
+      }
+      &.is-on {
+        pointer-events: painted;
+        opacity: 1;
+        &::before {
+          transform: scale(28);
+          @media screen and (min-width: 440px) {
+            transform: scale(30);
+          }
+          @media screen and (min-width: 510px) {
+            transform: scale(32);
+          }
+          @media screen and (min-width: 570px) {
+            transform: scale(34);
+          }
+          @media screen and (min-width: 630px) {
+            transform: scale(38);
+          }
+        }
+        .menu,.lang {
+          transform: translate(0);
+        }
+      }
+    }
+  }
+
+  .menu-btn {
+    display: none;
+    @include mq-sp {
+      display: block;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      .bar {
+        display: block;
+        width: 30px;
+        height: 1px;
+        background-color: $color-black;
+        transition: all 0.1s ease-out;
+        &:nth-child(2) {
+          margin: 4px 0;
+        }
+      }
+      &.is-on {
+        .bar {
+          background-color: $color-white;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          &:nth-child(1) {
+            transform: rotate(45deg);
+            left: 6px;
+          }
+          &:nth-child(2) {
+            opacity: 0;
+            margin: 0;
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+            left: 6px;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .logo {
+    .logo__item {
+      width: 100px;
+      display: block;
+      overflow: hidden;
+      transition: all 0.4s ease-out;
+      @media screen and (max-width: 1024px) {
+        width: 48px;
+      }
+      @include mq-sp {
+        width: 140px*.5;
+      }
+      .svg {
+        width: 100px;
+        transition: all 0.1s ease-out;
+        @include mq-sp {
+          width: 140px*.5;
+        }
+      }
+      &:hover {
+        .svg {
+          fill: $color-primary;
+        }
+      }
+    }
+  }
+
+  .lang {
+    margin-left: 30px;
+    transition: all 0.4s ease-out;
+    @media screen and (max-width: 1024px) {
+      margin-left: 14px;
+    }
+    @include mq-sp {
+      transition: all 0.4s ease-out;
+      transform: translateX(100%);
+    }
+    @include mq-sp {
+      margin: 0 auto;
+    }
+    .lang-list {
+      display: flex;
+      @include mq-sp {
+
+      }
+    }
+    .lang-list__item {
+      font-size: 16px;
+      font-family: $font-family-primary;
+      padding-right: 0.6em;
+      margin-right: 0.6em;
+      position: relative;
+      @include mq-sp {
+        font-size: 20px;
+      }
+
+      .page {
+        transition: all 0.1s ease-out;
+        @include mq-sp {
+          color: $color-white;
+        }
+        &:hover {
+          color: $color-primary;
+        }
+        &.is-current {
+          color: $color-primary;
+          pointer-events: none;
+        }
+      }
+      &::before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: $color-black;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) rotate(25deg);
+        @include mq-sp {
+          background-color: $color-white;
+        }
+      }
+      &:last-child {
+        padding-right: 0;
+        margin-right: 0;
+        &::before {
+          display: none;
+        }
+      }
+
+    }
+
+  }
+
+
+  .menu {
+    margin-left: auto;
+    @include mq-sp {
+      margin-left: 0;
+      margin-bottom: 80px;
+      transition: all 0.4s ease-out;
+      transform: translateX(100%);
+    }
+    .menu-list {
+      display: flex;
+      @include mq-sp {
+        flex-direction: column;
+      }
+    }
+    .menu-list__item {
+      font-size: 16px;
+      font-weight: 300;
+      margin-right: 2.0em;
+      font-family: $font-family-primary;
+      @include mq-sp {
+        font-size: 24px;
+        margin-right: 0;
+        margin-bottom: 1.6em;
+      }
+      &:last-child {
+        margin-right: 0;
+        @include mq-sp {
+          margin-bottom: 0;
+        }
+      }
+      .link {
+        transition: all 0.1s ease-out;
+        position: relative;
+        @include mq-sp {
+          color: $color-white;
+        }
+        &::before {
+          content: '';
+          width: 0;
+          height: 2px;
+          background-color: $color-primary;
+          position: absolute;
+          left: 0;
+          bottom: -0.1em;
+          transition: all 0.1s ease-out;
+          @include mq-sp {
+            height: 1px;
+          }
+        }
+        &:hover {
+          color: $color-primary;
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,71 @@
+/*
+===== original reset ===========================
+*/
+
+/* 1: universal reset
+-------------------------------------*/
+html {
+    cursor: default;
+    font-size: 62.5%;
+  }
+
+  /* box sizing
+  -------------------------------------*/
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  /* general params
+  -------------------------------------*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  body,
+  div,
+  p,
+  pre,
+  ul,
+  ol,
+  dl,
+  dt,
+  dd,
+  address,
+  form,
+  blockquote,
+  figure {
+    margin: 0;
+    padding: 0; /* margin&padding reset */
+    font-style: normal;
+    font-weight: normal;
+  }
+  li {
+    list-style: none;
+  }
+
+  /* word break
+  -------------------------------------*/
+  p {
+    word-break: normal;
+  }
+
+  /* image
+  -------------------------------------*/
+  img {
+    vertical-align: bottom;
+    border-style: none;
+  }
+
+  /* 2: form setting
+  -------------------------------------*/
+  option {
+    padding-right: 10px;
+  }
+  input,
+  select {
+    vertical-align: middle;
+  }

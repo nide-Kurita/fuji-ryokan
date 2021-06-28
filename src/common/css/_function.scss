@@ -1,0 +1,23 @@
+@function change_size_vw( $number ) {
+  @return $number/$design-width*100vw;
+}
+
+@function change_size_vh( $number ) {
+  @return $number/$design-width*100vh;
+}
+
+// cases 設定
+
+// rem でのサイズ設定用
+@function change_size_rem( $number ) {
+  @return $number*0.05rem;
+}
+
+// vw でのサイズ設定用
+@function change_size_vw_pc( $number ) {
+  @return $number/$pc-design-width*100vw;
+}
+
+@function change_size_vw_sp( $number ) {
+  @return $number/$sp-design-width*100vw;
+}

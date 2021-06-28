@@ -1,0 +1,63 @@
+{
+  "name": "site-name",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "nide.inc",
+  "license": "MIT",
+  "config": {
+    "srcDir": "src",
+    "buildDir": "build",
+    "resultDir": "result",
+    "copyExt": "**/!(_modules)/*.{html,js,png,jpg,gif,ico,mp4,mov,svg,otf,css,zip}",
+    "serveStartPath": "/"
+  },
+  "scripts": {
+    "prestart": "npm run test:build",
+    "start": "npm run serve",
+    "test": "npm-run-all --parallel test:*",
+    "test:build": "npm run build -- $npm_package_config_buildDir",
+    "test:result": "NODE_ENV=production npm run build -- $npm_package_config_resultDir",
+    "serve": "browser-sync start -c browsersync.config.js",
+    "build": "npm-run-all \"clean -- {1}/*\" --parallel \"build:* -- -o {1}\" webpack \"copy -- {1}\" --sequential \"postcss -- {1}/**/*.css\" --",
+    "build:pug": "pug-cli $npm_package_config_srcDir --hierarchy -P -O data.js",
+    "build:sass": "node-sass $npm_package_config_srcDir --output-style compressed --importer node_modules/node-sass-import",
+    "clean": "rimraf",
+    "copy": "cpx $npm_package_config_srcDir/$npm_package_config_copyExt",
+    "postcss": "postcss -u autoprefixer -r --no-map",
+    "webpack": "webpack"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.23.6",
+    "cpx": "^1.5.0",
+    "node-cmd": "^3.0.0",
+    "node-sass": "^4.7.2",
+    "node-sass-import": "2.0.1",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0",
+    "pug": "^2.0.4",
+    "pug-cli": "git+https://github.com/pugjs/pug-cli.git",
+    "pug-loader": "^2.4.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "@types/gsap": "^1.20.2",
+    "desvg": "^1.0.2",
+    "gsap": "^2.0.2",
+    "jquery": "^3.4.1",
+    "jquery-inview": "^1.1.2",
+    "plyr": "^3.5.6",
+    "progressbar": "^1.3.0",
+    "progressbar.js": "^1.1.0",
+    "ress": "1.2.2",
+    "slick-carousel": "^1.8.1",
+    "smoothscroll-polyfill": "0.4.4",
+    "swiper": "5.1.0"
+  }
+}

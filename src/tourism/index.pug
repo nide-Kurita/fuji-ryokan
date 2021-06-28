@@ -1,0 +1,104 @@
+extends ../_template/_template.pug
+
+//- meta
+block var
+  -var title = '';
+  -var desc = '';
+  -var key = '';
+  -var name  = '';
+  -var ogType = 'website';
+  -var path = '';
+
+  -var common_dir ='../../common/';
+
+  -var imagePath = assets_dir+'img/';
+  -var imageCommonPath = common_dir+'img/';
+
+
+block main
+  section.tourism
+    .inner.inner--tourism
+      h2.sect-head.sect-head--tourism TOURISM
+        p.sect-lead 近隣の観光
+      
+      .tourism-conteiner
+        .grid-wrap
+          .tourism-swiper.tourism-swiper--01
+            .swiper-container
+              ul.swiper-wrapper
+                li.swiper-slide
+                  img(src=imagePath+'sect_tourism/img-01.jpg' alt="")
+                li.swiper-slide
+                  img(src=imagePath+'sect_tourism/img-02.jpg' alt="")
+
+            .tourism-pagination-arrow
+              .arrow.arrow--left
+              .arrow.arrow--right
+                    
+          .tourism-title
+            p.tourism-title__text.fw-bold 近隣の名前
+            p.tourism-title__text 近隣の説明
+            p.tourism-title__text 近隣の説明近隣の説明
+          .tourism-desc
+            p.desc 住所 : 〒136-0071 東京都江東区亀戸３丁目６−１
+            p.desc 徒歩 : 3分
+            p.desc WEBサイト : <a href="http://kameidotenjin.or.jp/" target="_blank">http://kameidotenjin.or.jp/</a>
+        .tourism-textarea
+          p.tourism-textarea__title
+            | 部屋の紹介文が入ります。
+          p.tourism-textarea__text
+            | 部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。
+      .tourism-conteiner
+        .grid-wrap.grid-wrap--reverse
+          .tourism-swiper.tourism-swiper--02
+            .swiper-container
+              ul.swiper-wrapper
+                li.swiper-slide
+                  img(src=imagePath+'sect_tourism/img-01.jpg' alt="")
+                li.swiper-slide
+                  img(src=imagePath+'sect_tourism/img-02.jpg' alt="")
+
+            .tourism-pagination-arrow
+              .arrow.arrow--left
+              .arrow.arrow--right
+                    
+          .tourism-title
+            p.tourism-title__text.fw-bold 近隣の名前
+            p.tourism-title__text 近隣の説明
+            p.tourism-title__text 近隣の説明近隣の説明
+          .tourism-desc
+            p.desc 住所 : 〒136-0071 東京都江東区亀戸３丁目６−１
+            p.desc 徒歩 : 3分
+            p.desc WEBサイト : <a href="http://kameidotenjin.or.jp/" target="_blank">http://kameidotenjin.or.jp/</a>
+        .tourism-textarea
+          p.tourism-textarea__title
+            | 部屋の紹介文が入ります。
+          p.tourism-textarea__text
+            | 部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。
+      .tourism-conteiner
+        .grid-wrap
+          .tourism-swiper.tourism-swiper--03
+            .swiper-container
+              ul.swiper-wrapper
+                li.swiper-slide
+                  img(src=imagePath+'sect_tourism/img-01.jpg' alt="")
+                li.swiper-slide
+                  img(src=imagePath+'sect_tourism/img-02.jpg' alt="")
+
+            .tourism-pagination-arrow
+              .arrow.arrow--left
+              .arrow.arrow--right
+                    
+          .tourism-title
+            p.tourism-title__text.fw-bold 近隣の名前
+            p.tourism-title__text 近隣の説明
+            p.tourism-title__text 近隣の説明近隣の説明
+          .tourism-desc
+            p.desc 住所 : 〒136-0071 東京都江東区亀戸３丁目６−１
+            p.desc 徒歩 : 3分
+            p.desc WEBサイト : <a href="http://kameidotenjin.or.jp/" target="_blank">http://kameidotenjin.or.jp/</a>
+        .tourism-textarea
+          p.tourism-textarea__title
+            | 部屋の紹介文が入ります。
+          p.tourism-textarea__text
+            | 部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。

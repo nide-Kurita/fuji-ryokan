@@ -1,0 +1,23 @@
+-var common_dir ='/common/';
+-var imageCommonPath = common_dir+'img/';
+
+footer.footer
+  .inner.inner--footer
+    .footer-wrap
+      .logo
+        a(href="/").logo__item
+          source.svg(srcset=imageCommonPath+"icon-logo-right.svg" media='(min-width: 768px)')
+          img.svg(src=imageCommonPath+"icon-logo-bottom.svg" alt='')
+        
+      .menu
+        ul.menu-list
+          li.menu-list__item
+            a.link(href="/room") Room
+          li.menu-list__item
+            a.link(href="/tourism") Tourism
+          li.menu-list__item
+            a.link(href="/access") Access
+          li.menu-list__item
+            a.link(href="/contact") Contact
+    
+    p.copy Copyright (C) 2021 Fujiryokan. All Rights Reserved.

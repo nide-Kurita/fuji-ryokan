@@ -1,0 +1,89 @@
+.guide {
+  order: 4;
+  background-color: $color-yellow;
+  .inner--guide {
+    padding-top: 80px;
+    padding-bottom: 90px;
+    @include mq-sp {
+      padding-top: 80px*.5;
+      padding-bottom: 90px*.5;
+    }
+  }
+
+  .sect-head--guide {
+    margin-bottom: 100px;
+    @include mq-sp {
+      margin-bottom: 20px;
+    }
+  }
+
+  .guide-block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+    @include mq-sp {
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+    &--reverse {
+      flex-direction: row-reverse;
+      @include mq-sp {
+        flex-direction: column;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .guide-img {
+    width: (600/1200)*100%;
+    @include mq-sp {
+      width: 100%;
+    }
+  }
+  .guide-textarea {
+    width: (600/1200)*100%;
+    padding: 0 (60/1200)*100%;
+    @include mq-sp {
+      width: (600/670)*100%;
+      border-bottom: 4px solid $color-primary;
+      background-color: $color-yellow;
+      margin: -60px auto 0;
+      padding: 20px 20px 30px;
+    }
+  }
+  .sect-head--room,
+  .sect-head--tourism {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    @include mq-sp {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .sect-lead {
+      text-align: left;
+      @include mq-sp {
+        text-align: center;
+      }
+    }
+  }
+  .guide-text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: (36 / 18);
+    @include mq-sp {
+      font-size: 12px;
+      line-height: (54 / 24);
+    }
+  }
+
+  .btn--more {
+    margin-top: 40px;
+    @include mq-sp {
+      margin-top: 24px;
+    }
+  }
+
+}

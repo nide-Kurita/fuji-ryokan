@@ -1,0 +1,143 @@
+extends ./_template/_template.pug
+
+//- meta
+block var
+  -var title = '';
+  -var desc = '';
+  -var key = '';
+  -var name  = '';
+  -var ogType = 'website';
+  -var path = '';
+
+  -var common_dir ='./common/';
+
+  -var imagePath = assets_dir+'img/';
+  -var imageCommonPath = common_dir+'img/';
+
+
+block main
+  section.mv
+    .inner.inner--mv
+      .mv-swiper
+        .swiper-container
+          ul.swiper-wrapper
+            li.swiper-slide
+              source(srcset=imagePath+"sect_mv/img-mv-01.jpg" media='(min-width: 768px)')
+              img(src=imagePath+"sect_mv/img-mv-01_sp.jpg" alt='')
+            li.swiper-slide
+              source(srcset=imagePath+"sect_mv/img-mv-02.jpg" media='(min-width: 768px)')
+              img(src=imagePath+"sect_mv/img-mv-02_sp.jpg" alt='')
+            li.swiper-slide
+              source(srcset=imagePath+"sect_mv/img-mv-03.jpg" media='(min-width: 768px)')
+              img(src=imagePath+"sect_mv/img-mv-03_sp.jpg" alt='')
+      
+        .content
+          a(href="/").logo
+            img(src=imageCommonPath+"icon-logo-mv.svg" alt='')
+          ul.lang-list
+            li.lang-list__item
+              a(href="").page.page--cn Ch
+            li.lang-list__item
+              a(href="").page.page--en En
+            li.lang-list__item
+              a(href="").page.page--ja Ja
+          
+      
+  section.about
+    .inner.inner--about
+      .content
+        h2.sect-head.sect-head--about.fade.fade--in ABOUT
+          p.sect-lead 富士旅館について
+        .text-area
+          p.text.fade.fade--in
+            | 旅館についての文言が入ります、
+            br
+            | 旅館についての文言が入ります、旅館についての文言が入ります、
+            br
+            | 旅館についての文言が入ります、
+          p.text.fade.fade--in
+            | 旅館についての文言が入ります、
+            br
+            | 旅館についての文言が入ります、旅館についての文言が入ります、
+            br
+            | 旅館についての文言が入ります、
+        .movie.fade.fade--in
+          iframe(width="480" height="360" src="https://www.youtube.com/embed/C0DPdy98e4c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+    .catch-img
+  
+  section.guide
+    .inner.inner--guide
+      h2.sect-head.sect-head--guide.fade.fade--in
+        | FUJIRYOKAN
+        p.sect-lead 富士旅館のご案内
+      
+      .guide-block
+        .guide-img.fade.fade--in
+          img(src=imagePath+"sect_guide/img-guide-01.jpg" alt='')
+        .guide-textarea.fade.fade--in-left
+          h3.sect-head.sect-head--room.fade.fade--in-left
+            | ROOM
+            p.sect-lead
+              | お部屋と設備のご紹介
+          p.guide-text.fade.fade--in-left
+            | 部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。
+          a(href="./room").btn.btn--more.fade.fade--in-left
+            span.btn-name
+              | MORE
+            .btn-arrow
+              img.svg(src=imageCommonPath+"icon-arrow-black.svg" alt='')
+      
+      .guide-block.guide-block--reverse
+        .guide-img.fade.fade--in
+          img(src=imagePath+"sect_guide/img-guide-02.jpg" alt='')
+        .guide-textarea
+          h3.sect-head.sect-head--tourism.fade.fade--in-right
+            | TOURISM
+            p.sect-lead 近隣の観光
+          p.guide-text.fade.fade--in-right
+            | 部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。
+          a(href="./tourism").btn.btn--more.fade.fade--in-right
+            span.btn-name
+              | MORE
+            .btn-arrow
+              img.svg(src=imageCommonPath+"icon-arrow-black.svg" alt='')
+
+      ul
+        li
+          span(glot-model='label_eclair')
+            | ECLAIR
+        li
+          span(glot-model='label_kitkat')
+            | KITKAT
+        li
+          span(glot-model='label_oreo')
+            | OREO 
+        
+      //- .slider-area.fade
+      //-   include ./_template/_modules/_shop_list.pug
+      //-   .slide-conteiner
+      //-     ul.slider
+      //-       each item in shopList01
+      //-         li.slider__item
+      //-           img(src=`${imagePath}`+item.img, alt="")
+      //-           p #{item.text}
+      //- 
+      //- .slider-area.fade
+      //-   include ./_template/_modules/_shop_list.pug
+      //-   .slide-conteiner
+      //-     ul.slider
+      //-       each item in shopList02
+      //-         li.slider__item
+      //-           img(src=`${imagePath}`+item.img, alt="")
+      //-           p #{item.text}
+      //- 
+      //- .chain.fade
+      //-   h3.chain-title チェーン店
+      //-   p.chain-lead 全国展開している人気店が勢揃い！
+      //-   include ./_template/_modules/_shop_list.pug
+      //-   .chain-wrap.fade.fade--delay-02
+      //-     each item in shopList03
+      //-       .chain-item
+      //-         img(src=`${imagePath}`+item, alt="")
+
+  

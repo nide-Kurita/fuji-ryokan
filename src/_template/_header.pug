@@ -1,0 +1,35 @@
+-var common_dir ='/common/';
+-var imageCommonPath = common_dir+'img/';
+
+header.header
+  .header-container.js-header-container
+    .header-wrap
+      .logo
+        a(href="/").logo__item.js-header-link
+          img.svg(src=imageCommonPath+"icon-logo-right.svg" alt='')
+      .menu-btn.js-menu-btn
+        span.bar
+        span.bar
+        span.bar
+      .menu-wrap.js-menu
+        .lang
+          ul.lang-list
+            li.lang-list__item
+              a.page.page--cn.js-header-link(href="") Ch
+            li.lang-list__item
+              a.page.page--en.js-header-link(href="") En
+            li.lang-list__item
+              a.page.page--ja.js-header-link.is-current(href="") Ja
+          
+        .menu
+          ul.menu-list
+            li.menu-list__item
+              a.link.js-header-link(href="/") Top
+            li.menu-list__item
+              a.link.js-header-link(href="/room") Room
+            li.menu-list__item
+              a.link.js-header-link(href="/tourism") Tourism
+            li.menu-list__item
+              a.link.js-header-link(href="/access") Access
+            li.menu-list__item
+              a.link.js-header-link(href="/contact") Contact

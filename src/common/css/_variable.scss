@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+$font-family-base: 'Noto Sans JP', '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+$font-family-primary: Avenir, 'Helvetica neue', Helvetica, '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+
+$design-width: 640;
+$design-hight: 2160;
+
+$pc-design-width: 1200;
+$sp-design-width: 768;
+
+
+$breakpoints: (
+  'xs': 576,
+  'sm': 576,
+  'md': 769,
+  'lg': 991,
+  'xl': 1100
+) !default;
+
+$contents-width-points: (
+  'sp': 540,
+  'pc': 940
+) !default;
+
+
+$color-white: #fff;
+$color-black: #2d302e;
+$color-red: #A73836;
+$color-orange: #A29679;
+$color-gray: #727272;
+$color-yellow: #FBFAF5;
+$color-green: #D4DCD6;
+
+// $color-red-100: #fad2ce;
+// $color-beige: #faefe5;
+// $color-green: #43c66f;
+
+//
+// $color-blue: #ff7e00;
+// $color-brown: #ac814d;
+
+
+$color-text-white: $color-white;
+$color-text-base: $color-black;
+$color-primary: $color-red;
+
+$namespace: '';
+
+
+$svg-data-uri: 'data:image/svg+xml;base64,';

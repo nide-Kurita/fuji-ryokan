@@ -1,0 +1,97 @@
+extends ../_template/_template.pug
+
+//- meta
+block var
+  -var title = '';
+  -var desc = '';
+  -var key = '';
+  -var name  = '';
+  -var ogType = 'website';
+  -var path = '/contact';
+
+  -var common_dir ='../../common/';
+
+  -var imagePath = assets_dir+'img/';
+  -var imageCommonPath = common_dir+'img/';
+
+
+block main
+  section.contact
+    .inner.inner--contact
+      h2.sect-head.sect-head--contact CONTACT
+        p.sect-lead お問い合わせ
+
+      .contact-conteiner
+        // class, action, methodを変更しないでください
+        form.formrun(action='https://form.run/api/v1/r/85ti4y5j7b2idwngy68b5rn1' method='post')
+          // ↓自由に要素を追加・編集することができます
+          .contact-item
+            .wrap
+              .contact-name
+                label お名前
+              .contact-text
+                input(name='お名前' type='text' data-formrun-required='')
+                p.contact-error(data-formrun-show-if-error='お名前') お名前を入力してください
+          .contact-item
+            .wrap
+              .contact-name
+                label メールアドレス
+              .contact-text
+                input(name='メールアドレス' type='text' data-formrun-type='email' data-formrun-required='')
+                p.contact-error(data-formrun-show-if-error='メールアドレス') メールアドレスを正しく入力してください
+          .contact-item
+            .wrap
+              .contact-name
+                label 電話番号
+              .contact-text
+                input(name='電話番号' type='text' data-formrun-type='tel' data-formrun-required='')
+                p.contact-error(data-formrun-show-if-error='電話番号') 電話番号を正しく入力してください
+          .contact-item
+            .wrap
+              .contact-name
+                span お問い合わせの種類
+              .contact-checkbox-list
+                .contact-checkbox-list__item
+                  input.contact-checkbox(type='checkbox' id="contactCheck1" name='お問い合わせの種類' value="予約について" data-formrun-required='')
+                  label(for="contactCheck1") 予約について
+                .contact-checkbox-list__item
+                  input.contact-checkbox(type='checkbox' id="contactCheck2" name='お問い合わせの種類' value="部屋について" data-formrun-required='')
+                  label(for="contactCheck2") 部屋について
+                .contact-checkbox-list__item
+                  input.contact-checkbox(type='checkbox' id="contactCheck3" name='お問い合わせの種類' value="値段について" data-formrun-required='')
+                  label(for="contactCheck3") 値段について
+                .contact-checkbox-list__item
+                  input.contact-checkbox(type='checkbox' id="contactCheck4" name='お問い合わせの種類' value="追加のサービスについて" data-formrun-required='')
+                  label(for="contactCheck4") 追加のサービスについて
+                .contact-checkbox-list__item
+                  input.contact-checkbox(type='checkbox' id="contactCheck5" name='お問い合わせの種類' value="送迎について" data-formrun-required='')
+                  label(for="contactCheck5") 送迎について
+                .contact-checkbox-list__item
+                  input.contact-checkbox(type='checkbox' id="contactCheck6" name='お問い合わせの種類' value="喫煙について" data-formrun-required='')
+                  label(for="contactCheck6") 喫煙について
+                .contact-checkbox-list__item
+                  input.contact-checkbox(type='checkbox' id="contactCheck7" name='お問い合わせの種類' value="その他" data-formrun-required='')
+                  label(for="contactCheck7") その他
+                p.contact-error(data-formrun-show-if-error='お問い合わせの種類') お問い合わせの種類を入力してください
+          .contact-item
+            .wrap
+              .contact-name
+                label お問い合わせの内容
+              .contact-text
+                textarea(name='お問い合わせの内容' rows="4" cols="40" data-formrun-required='')
+                p.contact-error(data-formrun-show-if-error='お問い合わせの内容') お問い合わせの内容を入力してください
+          .contact-btn
+            .wrap
+              .contact-name
+                label(for="contactBtn") 個人情報利用同意
+              .contact-checkbox
+                input(type='checkbox' id="contactBtn" name='個人情報利用同意' data-formrun-required='')
+            p.contact-error(data-formrun-show-if-error='個人情報利用同意') 同意してください
+          // ボット投稿をブロックするためのタグ
+          ._formrun_gotcha
+            style(media='screen').
+              ._formrun_gotcha {position:absolute!important;height:1px;width:1px;overflow:hidden;}
+            label(for='_formrun_gotcha') If you are a human, ignore this field
+            input#_formrun_gotcha(type='text' name='_formrun_gotcha' tabindex='-1')
+          button.contact-submit(type='submit' data-formrun-error-text='未入力の項目があります' data-formrun-submitting-text='送信中...') 送信
+      

@@ -1,0 +1,122 @@
+extends ../_template/_template.pug
+
+//- meta
+block var
+  -var title = '';
+  -var desc = '';
+  -var key = '';
+  -var name  = '';
+  -var ogType = 'website';
+  -var path = '';
+
+  -var common_dir ='../../common/';
+
+  -var imagePath = assets_dir+'img/';
+  -var imageCommonPath = common_dir+'img/';
+
+
+block main
+  section.room
+    .inner.inner--room
+      h2.sect-head.sect-head--room ROOM
+        p.sect-lead お部屋と設備のご紹介
+      
+      .room-conteiner
+        .room-swiper.room-swiper--01
+          include ../_template/_modules/_room_list.pug
+          .swiper-container
+            ul.swiper-wrapper
+              each item in roomList01
+                li.swiper-slide
+                  .room-slide-img
+                    img(src=imagePath+item.img alt="")
+                  p.room-slide-desc
+                    span #{item.desc}
+          .room-pagination-arrow
+            .arrow.arrow--left
+            .arrow.arrow--right
+          p.room-pagination-num
+        .room-textarea
+          p.room-title 部屋の紹介文が入ります 
+          h3.room-name Room-1
+          p.room-text
+            | 部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。
+          p.room-desc  ダブル  24平米 定員： 1～3名 
+          ul.room-tag-list
+            li.tag ■禁煙
+            li.tag ■禁ベッド幅160cm～
+            li.tag ■禁バストイレ別
+            li.tag ■禁シャワーブース付
+            li.tag ■禁ネット可（wi-fi）
+          ul.room-desc-list
+            li.desc ○和ベッド（2100×2000mm）をご用意。
+            li.desc ○地デジ対応液晶テレビ
+            li.desc ○高速インターネット接続無料
+            li.desc ○温水洗浄機付トイレ
+          a(href="").room-btn 空室を見る
+      .room-conteiner
+        .room-swiper.room-swiper--02
+          include ../_template/_modules/_room_list.pug
+          .swiper-container
+            ul.swiper-wrapper
+              each item in roomList02
+                li.swiper-slide
+                  .room-slide-img
+                    img(src=imagePath+item.img alt="")
+                  p.room-slide-desc
+                    span #{item.desc}
+          .room-pagination-arrow
+            .arrow.arrow--left
+            .arrow.arrow--right
+          p.room-pagination-num
+        .room-textarea
+          p.room-title 部屋の紹介文が入ります 
+          h3.room-name Room-2
+          p.room-text
+            | 部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。
+          p.room-desc  ダブル  24平米 定員： 1～3名 
+          ul.room-tag-list
+            li.tag ■禁煙
+            li.tag ■禁ベッド幅160cm～
+            li.tag ■禁バストイレ別
+            li.tag ■禁シャワーブース付
+            li.tag ■禁ネット可（wi-fi）
+          ul.room-desc-list
+            li.desc ○和ベッド（2100×2000mm）をご用意。
+            li.desc ○地デジ対応液晶テレビ
+            li.desc ○高速インターネット接続無料
+            li.desc ○温水洗浄機付トイレ
+          a(href="").room-btn 空室を見る
+      .room-conteiner
+        .room-swiper.room-swiper--03
+          include ../_template/_modules/_room_list.pug
+          .swiper-container
+            ul.swiper-wrapper
+              each item in roomList03
+                li.swiper-slide
+                  .room-slide-img
+                    img(src=imagePath+item.img alt="")
+                  p.room-slide-desc
+                    span #{item.desc}
+          .room-pagination-arrow
+            .arrow.arrow--left
+            .arrow.arrow--right
+          p.room-pagination-num
+        .room-textarea
+          p.room-title 部屋の紹介文が入ります 
+          h3.room-name Room-3
+          p.room-text
+            | 部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。部屋の紹介文が入ります。
+          p.room-desc  ダブル  24平米 定員： 1～3名 
+          ul.room-tag-list
+            li.tag ■禁煙
+            li.tag ■禁ベッド幅160cm～
+            li.tag ■禁バストイレ別
+            li.tag ■禁シャワーブース付
+            li.tag ■禁ネット可（wi-fi）
+          ul.room-desc-list
+            li.desc ○和ベッド（2100×2000mm）をご用意。
+            li.desc ○地デジ対応液晶テレビ
+            li.desc ○高速インターネット接続無料
+            li.desc ○温水洗浄機付トイレ
+          a(href="").room-btn 空室を見る

@@ -1,0 +1,205 @@
+@import './mixin';
+
+
+
+html{
+  line-height: 1;
+  font-size: 62.5%;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  color: $color-text-base;
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  letter-spacing: 0.05em;
+
+  .page-container {
+    // display: flex;
+    // flex-direction: column;
+    position: relative;
+  }
+
+  ::selection {
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  img{
+    max-width: none;
+    width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: $color-text-base;
+    text-decoration: none;
+  }
+
+  .pc {
+    display: block;
+    @include mq-sp {
+      display: none;
+    }
+  }
+  .sp {
+    display: none;
+    @include mq-sp {
+      display: block;
+    }
+  }
+}
+.inner {
+  width: 100%;
+  max-width: 1280px;
+  padding-right: 40px;
+  padding-left: 40px;
+  margin: 0 auto;
+  @include mq-sp {
+    // max-width: 500px;
+    padding-right: (40/750)*100%;
+    padding-left: (40/750)*100%;
+  }
+}
+
+.sect-head {
+  font-size: 32px;
+  letter-spacing: 0.3em;
+  text-align: center;
+  font-family: $font-family-primary;
+  @include mq-sp {
+    font-size: 48px*.5;
+  }
+  .sect-lead {
+    color: $color-gray;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-align: center;
+    font-family: $font-family-base;
+    margin-top: 0.8em;
+    @include mq-sp {
+      font-size: 22px*.5;
+    }
+  }
+}
+
+.btn {
+  width: 240px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5em;
+  position: relative;
+  border: 1px solid $color-black;
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.1s ease-out;
+  @include mq-sp {
+    justify-content: center;
+    margin: 0 auto;
+    padding-left: 0;
+    width: 260px*.5;
+    height: 60px*.5;
+  }
+  .btn-name {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    @include mq-sp {
+      font-size: 24px*.5;
+    }
+  }
+  .btn-arrow {
+    width: 40px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    right: 1.5em;
+    transform: translateY(-50%);
+    transition: all 0.1s ease-out;
+    @include mq-sp {
+      display: none;
+    }
+  }
+  &::before {
+    content: '';
+    background-color: $color-primary;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.2s ease-out;
+    z-index: -10;
+  }
+  &:hover {
+    color: $color-white;
+    border-color: $color-primary;
+    .btn-arrow {
+      right: 0.5em;
+      .svg {
+        fill: $color-white;
+      }
+    }
+    &::before {
+      transform: translateX(0);
+
+    }
+  }
+  &.btn--more {
+  }
+}
+
+
+.fade{
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.000, 0.000, 0.105, 1.000),transform 1.2s cubic-bezier(0.000, 0.000, 0.105, 1.000);
+  // transition: transform 1s cubic-bezier(0.000, 0.000, 0.105, 1.000);
+  &.fade--in{
+    transform: translateY(30px);
+  }
+  &.fade--in-left{
+    transform: translateX(20px);
+    @include mq-sp {
+      transform: translate(0, 30px);
+    }
+  }
+  &.fade--in-right{
+    transform: translateX(-20px);
+    @include mq-sp {
+      transform: translate(0, 30px);
+    }
+  }
+  &.fade--delay-01{
+    transition-delay: .1s;
+  }
+  &.fade--delay-02{
+    transition-delay: .25s;
+  }
+  &.fade--delay-03{
+    transition-delay: .4s;
+  }
+  &.fade--delay-04{
+    transition-delay: .55s;
+  }
+  &.fade--delay-none {
+    @include mq-sp {
+      transition-delay: 0s;
+    }
+  }
+
+  &.is-show{
+    opacity: 1;
+    transform: none;
+  }
+}
